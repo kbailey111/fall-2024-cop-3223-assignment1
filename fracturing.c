@@ -3,17 +3,28 @@
 
 #define PI 3.14159
 
+
+//**declarartions */
+void askForUserInput(double *x1, double *y1, double *x2, double *y2);
+double calculateDistance();
+double calculatePerimeter();
+double calculateArea();
+double calculateWidth();
+double calculateHeight();
+
+
+
 //**input for x1, y1, x2, y2 */
 void askForUserInput(double *x1, double *y1, double *x2, double *y2) {
     printf("Enter coordinates for Point 1 (x1, y1): ");
-    scanf("%1f %1f", &x1, &y1);
+    scanf("%lf %lf", x1, y1);
     printf("Enter coordinates for Point 2 (x2, y2): ");
-    scanf("%1f %1f", &x2, &y2);
+    scanf("%lf %lf", x2, y2);
 }
 
 
 //**calculation of distance between 2 points */
-double calculationDistance() {
+double calculateDistance() {
     double x1, y1, x2, y2;
     askForUserInput(&x1, &y1, &x2, &y2);
     double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
@@ -27,7 +38,7 @@ double calculationDistance() {
 
 //**perimeter of circle */
 double calculatePerimeter() {
-    double radius = calculationDistance() / 2.0;
+    double radius = calculateDistance() / 2.0;
     double perimeter = 2 * PI * radius;
 
     printf("The perimeter of the city encompassed by your request is %.2f\n", perimeter);
@@ -38,7 +49,7 @@ double calculatePerimeter() {
 
 //**calculation for area of circle */
 double calculateArea() {
-    double radius = calculationDistance() / 2.0;
+    double radius = calculateDistance() / 2.0;
     double area = PI * pow(radius, 2);
 
     printf("The area of the city encompassed by your request is %.2f\n", area);
